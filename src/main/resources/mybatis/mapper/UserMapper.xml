@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fke.mapper.UserMapper" >
+
+    <insert id="insertUser" parameterType="com.fke.pojo.User">
+        insert into test_predict.tmp_user
+        (id,age,name)
+        values
+        (#{id},#{age},#{name})
+    </insert>
+
+    <select id="getAllUser" resultType="com.fke.pojo.User">
+        select id as myid,
+        age as myage,
+        name as myname
+        from test_predict.tmp_user
+    </select>
+</mapper>
